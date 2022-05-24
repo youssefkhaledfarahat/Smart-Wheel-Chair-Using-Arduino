@@ -1,0 +1,23 @@
+|sensscar2
+sensorleft => sensors.IN0
+sensorleft => sensors.IN0
+sensorleft => sensors.IN0
+sensorleft => sensors.IN0
+sensorright => sensors.IN1
+sensorright => sensors.IN1
+sensorright => sensors.IN1
+sensorright => sensors.IN1
+switch => motion.IN0
+switch => goR.IN1
+switch => goR.OUTPUTSELECT
+switch => goL.OUTPUTSELECT
+switch => buzz.OUTPUTSELECT
+Hsensor => motion.IN1
+goR <= goR$latch.DB_MAX_OUTPUT_PORT_TYPE
+stopR <= <GND>
+goL <= goL$latch.DB_MAX_OUTPUT_PORT_TYPE
+stopL <= <GND>
+Lout <= motion.DB_MAX_OUTPUT_PORT_TYPE
+buzz <= buzz$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

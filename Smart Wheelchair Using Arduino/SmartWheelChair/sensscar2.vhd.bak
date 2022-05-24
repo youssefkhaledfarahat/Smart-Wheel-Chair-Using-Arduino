@@ -1,0 +1,64 @@
+LIBRARY ieee;
+USE ieee.std logic 1164.all ;
+
+ENTITY sensscar2 IS
+Port(sensorleft, sensorright, switch, Hsensor:in std_logic;
+goR, stopR, goL, stopL, Lout, buzz:out std_logic)
+Architecture behav of sesnsecar is
+Begin 
+
+sensors :process(sensorleft,sensorright )
+begin
+if(switch = '1')
+then
+if(sensorleft = '0') 
+then
+		goR <= '0';
+		stopR <= '0';
+		goL <='1';
+		stopL<='0';
+		buzz <='0';
+		end IF
+
+if(sensorright = '0') then 
+		goR <= '1';
+		stopR <= '0';
+		goL<='0';
+		stopL<= '0';
+		buzz<= '0';
+		end if;
+if(((sensorright = '0') and (sensorleft='0')))then
+		goR <= '0';
+		stopR <= '0';
+		goL<='0';
+		stopL<='0';
+		buzz<='1';
+		end if
+if(((sensorright = '1') and (sensorleft='1'))) then
+		goR <= '1';
+		stopR <= '0';
+		goL<='1';
+		stopL <='0';
+		buzz <='0';
+		end if
+
+else
+goR <= '0';
+stopR <= '0';
+goL <= '0';
+stopL <= '0';
+buzz <='0';
+end if
+
+end process sensors
+
+
+motion :process(Hsensor)
+Begin
+if((Hsensor = '1') and (switch = '1')) then
+Lout <= '1';
+else
+Lout <= '0';
+end if ;
+end process motion;
+end behav  ;

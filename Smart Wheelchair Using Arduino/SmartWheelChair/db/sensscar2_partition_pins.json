@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "goR",
+					"strict" : false
+				},
+				{
+					"name" : "goL",
+					"strict" : false
+				},
+				{
+					"name" : "Lout",
+					"strict" : false
+				},
+				{
+					"name" : "buzz",
+					"strict" : false
+				},
+				{
+					"name" : "sensorleft",
+					"strict" : false
+				},
+				{
+					"name" : "switch",
+					"strict" : false
+				},
+				{
+					"name" : "sensorright",
+					"strict" : false
+				},
+				{
+					"name" : "Hsensor",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
